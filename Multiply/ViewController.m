@@ -9,10 +9,27 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+{
+    
+    __weak IBOutlet UILabel *myAnswer;
+    __weak IBOutlet UITextField *myNumber;
+    
+    __weak IBOutlet UILabel *myMultiplier;
+}
 @end
 
 @implementation ViewController
+- (IBAction)onCalculateButtonPressed:(id)sender {
+    int number = [myNumber.text intValue];
+    NSLog(@"The number is %i", number);
+    int mutiplierNumber= [myMultiplier.text intValue];
+    NSLog(@ "%i", mutiplierNumber);
+    int product = number * mutiplierNumber;
+    myAnswer.text = [NSString stringWithFormat:@"%i", product];
+    
+    
+}
+
 
 - (void)viewDidLoad
 {
